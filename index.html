@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Hitesh & Manisha — A Wedding Celebration in Kanpur</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=Tenor+Sans&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream:        #fbf3e3;
+  --cream-soft:   #fff9ef;
+  --cream-warm:   #f5e6c8;
+  --parchment:    #efe1c2;
+  --gold:         #b8892b;
+  --gold-deep:    #8b6311;
+  --gold-light:   #d4a849;
+  --maroon:       #6b1a2a;
+  --maroon-deep:  #4a0f1c;
+  --saffron:      #c2410c;
+  --ink:          #3a1f14;
+  --ink-soft:     #5a3a28;
+  --muted:        #8a6b4f;
+  --border:       rgba(184,137,43,0.35);
+  --border-strong:rgba(184,137,43,0.6);
+  --shadow:       0 1px 2px rgba(74,15,28,0.06), 0 4px 14px rgba(74,15,28,0.06);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Jost',sans-serif;
+  background:var(--cream);
+  background-image:
+    radial-gradient(circle at 12% 8%, rgba(184,137,43,0.10) 0%, transparent 35%),
+    radial-gradient(circle at 88% 92%, rgba(107,26,42,0.08) 0%, transparent 40%);
+  color:var(--ink);
+  min-height:100vh;
+  overflow-x:hidden;
+}
+.serif{font-family:'Cormorant Garamond',serif;}
+.tenor{font-family:'Tenor Sans',sans-serif;}
+
+/* ── Screens ── */
+.screen{display:none;min-height:100vh;flex-direction:column;animation:fadeIn 0.4s ease;}
+.screen.active{display:flex;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+
+.scroll-area{flex:1;overflow-y:auto;}
+
+/* ── Top bar ── */
+.topbar{
+  display:flex;align-items:center;
+  padding:14px 20px;
+  border-bottom:0.5px solid var(--border);
+  background:rgba(251,243,227,0.96);
+  position:sticky;top:0;z-index:100;
+  backdrop-filter:blur(10px);
+}
+.back-btn{
+  background:none;border:none;color:var(--maroon);cursor:pointer;
+  font-family:'Jost',sans-serif;font-size:11px;letter-spacing:2.5px;
+  text-transform:uppercase;padding:6px 0;display:flex;align-items:center;gap:6px;
+}
+.topbar-title{
+  font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:500;
+  color:var(--maroon);position:absolute;left:50%;transform:translateX(-50%);
+  letter-spacing:1px;
+}
+
+/* ══════════════════════════════
+   COVER PAGE
+══════════════════════════════ */
+#cover{
+  position:relative;
+  background:var(--cream);
+  align-items:center;
+  justify-content:flex-start;
+  text-align:center;
+  overflow:hidden;
+  min-height:100vh;
+}
+.cover-hero{
+  position:relative;
+  width:100%;
+  height:58vh;
+  min-height:340px;
+  overflow:hidden;
+  flex-shrink:0;
+}
+.cover-hero img{
+  width:100%;height:100%;object-fit:cover;
+  filter:brightness(0.95) saturate(1.05);
+  display:block;
+}
+.cover-hero-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to bottom, rgba(251,243,227,0.05) 0%, rgba(251,243,227,0.1) 45%, rgba(251,243,227,0.85) 85%, rgba(251,243,227,1) 100%);
+}
+.cover-hero-pattern{
+  position:absolute;inset:0;
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(184,137,43,0.10) 0%, transparent 50%),
+    radial-gradient(circle at 80% 50%, rgba(107,26,42,0.10) 0%, transparent 50%);
+}
+.cover-floater{
+  position:absolute;bottom:0;left:0;right:0;
+  padding:24px 20px 0;
+}
+.cover-tag{
+  font-size:10px;letter-spacing:5px;color:var(--gold-deep);
+  text-transform:uppercase;margin-bottom:10px;opacity:0.95;
+  font-family:'Tenor Sans',sans-serif;
+}
+.cover-names{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(44px,12vw,80px);
+  font-weight:400;line-height:1.0;
+  color:var(--maroon-deep);
+  letter-spacing:-0.5px;
+  text-shadow:0 1px 2px rgba(255,249,239,0.5);
+}
+.cover-names em{color:var(--gold-deep);font-style:italic;}
+.cover-amp{
+  font-size:clamp(34px,9vw,56px);
+  color:var(--gold);font-style:italic;
+  display:block;margin:2px 0;
+  font-family:'Cormorant Garamond',serif;
+}
+.cover-body{width:100%;padding:20px 24px 36px;}
+.cover-date-row{
+  display:flex;align-items:center;gap:10px;
+  justify-content:center;margin:12px 0 20px;
+}
+.cover-date-line{flex:1;height:0.5px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+.cover-date{
+  font-size:11px;letter-spacing:4px;color:var(--gold-deep);
+  text-transform:uppercase;font-family:'Tenor Sans',sans-serif;
+  white-space:nowrap;
+}
+.cover-location{
+  font-family:'Cormorant Garamond',serif;
+  font-size:15px;font-style:italic;color:var(--ink-soft);
+  margin-bottom:28px;letter-spacing:1px;
+}
+.paisley-divider{
+  display:flex;align-items:center;gap:10px;
+  justify-content:center;margin-bottom:28px;
+}
+.paisley-line{flex:1;height:0.5px;background:linear-gradient(90deg,transparent,var(--border));max-width:80px;}
+.paisley-line.right{background:linear-gradient(90deg,var(--border),transparent);}
+.paisley-center{color:var(--gold);font-size:18px;}
+
+/* Nav grid */
+.nav-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:9px;max-width:420px;margin:0 auto;}
+.nav-btn{
+  background:var(--cream-soft);
+  border:0.5px solid var(--border);
+  border-radius:3px;
+  padding:16px 8px 14px;
+  cursor:pointer;
+  font-family:'Tenor Sans',sans-serif;
+  font-size:10px;letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--maroon);
+  transition:all 0.3s;
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  position:relative;overflow:hidden;
+  box-shadow:var(--shadow);
+}
+.nav-btn::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(184,137,43,0.10) 0%,transparent 60%);
+  opacity:0;transition:opacity 0.3s;
+}
+.nav-btn:hover::before{opacity:1;}
+.nav-btn:hover{border-color:var(--gold);color:var(--maroon-deep);}
+.nav-btn-icon{font-size:22px;line-height:1;}
+.nav-btn-label{font-size:9.5px;letter-spacing:2px;text-align:center;line-height:1.4;color:var(--ink);}
+
+/* ══════════════════════════════
+   EVENTS LIST
+══════════════════════════════ */
+.day-separator{
+  display:flex;align-items:center;gap:14px;
+  padding:28px 20px 16px;
+}
+.day-sep-line{flex:1;height:0.5px;background:var(--border);}
+.day-sep-content{text-align:center;}
+.day-sep-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:11px;font-weight:500;
+  letter-spacing:4px;color:var(--gold-deep);
+  text-transform:uppercase;margin-bottom:3px;
+}
+.day-sep-date{
+  font-family:'Cormorant Garamond',serif;
+  font-size:22px;font-weight:500;
+  color:var(--maroon-deep);letter-spacing:0.5px;
+}
+.day-sep-weekday{
+  font-size:10px;letter-spacing:3px;color:var(--muted);
+  text-transform:uppercase;margin-top:2px;
+  font-family:'Tenor Sans',sans-serif;
+}
+
+.event-card{
+  margin:0 16px 14px;
+  border-radius:3px;
+  overflow:hidden;
+  border:0.5px solid var(--border);
+  cursor:pointer;
+  transition:all 0.3s;
+  position:relative;
+  background:var(--cream-soft);
+  box-shadow:var(--shadow);
+}
+.event-card:hover{border-color:var(--border-strong);transform:translateY(-1px);}
+.event-card-inner{display:flex;flex-direction:column;}
+.event-img-wrap{position:relative;height:190px;overflow:hidden;background:var(--parchment);}
+.event-img-wrap img{width:100%;height:100%;object-fit:cover;filter:brightness(0.92) saturate(1.05);transition:transform 0.5s;}
+.event-card:hover .event-img-wrap img{transform:scale(1.03);}
+.event-img-placeholder{
+  width:100%;height:100%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:48px;
+}
+.event-img-gradient{
+  position:absolute;inset:0;
+  background:linear-gradient(to top, rgba(74,15,28,0.78) 0%, rgba(74,15,28,0.15) 55%, transparent 100%);
+}
+.event-time-badge{
+  position:absolute;top:12px;right:12px;
+  background:rgba(255,249,239,0.92);border:0.5px solid var(--border);
+  border-radius:2px;padding:4px 10px;
+  font-size:10px;letter-spacing:1.5px;color:var(--maroon);
+  font-family:'Tenor Sans',sans-serif;
+  backdrop-filter:blur(4px);
+}
+.event-title-overlay{
+  position:absolute;bottom:0;left:0;right:0;
+  padding:14px 16px;
+}
+.event-title-overlay .event-emoji{font-size:18px;margin-bottom:4px;display:block;}
+.event-title-overlay .event-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:24px;font-weight:500;color:#fff7e8;
+  line-height:1.1;margin-bottom:3px;
+}
+.event-title-overlay .event-day-label{
+  font-size:10px;letter-spacing:3px;color:var(--gold-light);
+  text-transform:uppercase;font-family:'Tenor Sans',sans-serif;
+}
+.event-footer{
+  background:var(--cream-warm);
+  padding:12px 16px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.event-location-short{
+  font-size:12px;color:var(--ink-soft);letter-spacing:0.5px;
+}
+.event-arrow{color:var(--maroon);font-size:14px;}
+
+/* ══════════════════════════════
+   EVENT DETAIL
+══════════════════════════════ */
+.detail-hero-wrap{
+  position:relative;height:260px;overflow:hidden;background:var(--parchment);flex-shrink:0;
+}
+.detail-hero-wrap img{
+  width:100%;height:100%;object-fit:cover;
+  filter:brightness(0.85) saturate(1.05);
+}
+.detail-hero-placeholder{
+  width:100%;height:100%;
+  display:flex;align-items:center;justify-content:center;font-size:72px;
+}
+.detail-hero-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top, rgba(74,15,28,0.85) 0%, rgba(74,15,28,0.2) 60%, transparent 100%);
+}
+.detail-hero-content{
+  position:absolute;bottom:0;left:0;right:0;padding:20px 22px;
+}
+.detail-day-tag{
+  font-size:10px;letter-spacing:4px;color:var(--gold-light);
+  text-transform:uppercase;font-family:'Tenor Sans',sans-serif;
+  margin-bottom:6px;
+}
+.detail-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:38px;font-weight:500;color:#fff7e8;
+  line-height:1.0;letter-spacing:-0.5px;
+}
+.detail-body{padding:24px 22px 40px;}
+
+.detail-info-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:14px;
+  margin-bottom:24px;
+}
+.detail-info-box{
+  background:var(--cream-soft);
+  border:0.5px solid var(--border);
+  border-radius:3px;padding:14px;
+  box-shadow:var(--shadow);
+}
+.detail-info-label{
+  font-size:9px;letter-spacing:3px;color:var(--gold-deep);
+  text-transform:uppercase;font-family:'Tenor Sans',sans-serif;
+  margin-bottom:5px;
+}
+.detail-info-val{
+  font-family:'Cormorant Garamond',serif;
+  font-size:15px;color:var(--maroon-deep);line-height:1.4;font-weight:500;
+}
+.detail-section-label{
+  font-size:9px;letter-spacing:3px;color:var(--gold-deep);
+  text-transform:uppercase;font-family:'Tenor Sans',sans-serif;
+  margin-bottom:10px;
+}
+.detail-desc{
+  font-size:14px;color:var(--ink-soft);line-height:1.75;
+  margin-bottom:26px;
+}
+.divider{height:0.5px;background:var(--border);margin:22px 0;}
+
+.dress-pill{
+  display:inline-flex;align-items:center;gap:6px;
+  border:0.5px solid var(--border);border-radius:2px;
+  padding:7px 13px;color:var(--maroon);
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;
+  background:var(--cream-soft);
+}
+
+/* ══════════════════════════════
+   RSVP FORM
+══════════════════════════════ */
+.rsvp-form-wrap{padding:28px 22px 50px;}
+.rsvp-event-tag{
+  font-size:10px;letter-spacing:4px;color:var(--gold-deep);
+  text-transform:uppercase;font-family:'Tenor Sans',sans-serif;
+  margin-bottom:6px;
+}
+.rsvp-event-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:32px;font-weight:500;color:var(--maroon-deep);
+  margin-bottom:8px;line-height:1.1;
+}
+.rsvp-intro{
+  font-size:13px;color:var(--ink-soft);line-height:1.7;
+  margin-bottom:22px;
+}
+.form-label{
+  font-size:9px;letter-spacing:3px;text-transform:uppercase;
+  color:var(--gold-deep);font-family:'Tenor Sans',sans-serif;
+  display:block;margin-bottom:8px;
+}
+.form-input{
+  width:100%;
+  background:var(--cream-soft);
+  border:0.5px solid var(--border);
+  border-radius:2px;padding:13px 15px;
+  color:var(--ink);
+  font-family:'Jost',sans-serif;font-size:14px;
+  outline:none;transition:border-color 0.2s;
+  margin-bottom:18px;
+  display:block;
+}
+.form-input:focus{border-color:var(--gold);}
+.form-input::placeholder{color:rgba(138,107,79,0.55);}
+textarea.form-input{resize:vertical;min-height:80px;}
+.guest-counter{
+  display:flex;align-items:center;gap:18px;margin-bottom:18px;
+}
+.count-btn{
+  width:38px;height:38px;
+  background:var(--cream-soft);
+  border:0.5px solid var(--border);border-radius:2px;
+  color:var(--maroon);font-size:22px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  transition:background 0.2s;font-family:'Cormorant Garamond',serif;
+  line-height:1;
+}
+.count-btn:hover{background:var(--cream-warm);}
+.count-display{
+  font-family:'Cormorant Garamond',serif;
+  font-size:34px;color:var(--maroon-deep);
+  min-width:36px;text-align:center;
+}
+.submit-btn{
+  width:100%;padding:17px;
+  background:linear-gradient(135deg,var(--maroon) 0%,var(--maroon-deep) 100%);
+  border:0.5px solid var(--gold);
+  border-radius:3px;
+  color:#fff7e8;
+  font-family:'Tenor Sans',sans-serif;
+  font-size:11px;letter-spacing:4px;text-transform:uppercase;
+  cursor:pointer;margin-top:6px;font-weight:400;
+  transition:opacity 0.2s, transform 0.1s;
+}
+.submit-btn:hover{opacity:0.93;}
+.submit-btn:disabled{opacity:0.6;cursor:not-allowed;}
+.success-card{
+  background:var(--cream-soft);
+  border:0.5px solid var(--gold);
+  border-radius:3px;padding:28px 22px;
+  text-align:center;margin-top:22px;
+  box-shadow:var(--shadow);
+}
+.success-card .s-emoji{font-size:30px;margin-bottom:12px;}
+.success-card .s-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:28px;font-weight:500;color:var(--maroon);
+  margin-bottom:8px;
+}
+.success-card .s-msg{font-size:13px;color:var(--ink-soft);line-height:1.65;}
+.form-error{
+  background:rgba(194,65,12,0.08);
+  border:0.5px solid rgba(194,65,12,0.4);
+  color:var(--saffron);
+  padding:11px 14px;border-radius:2px;font-size:13px;
+  margin-bottom:14px;display:none;
+}
+
+/* ══════════════════════════════
+   CITY / GROOMING / TRANSPORT
+══════════════════════════════ */
+.section-hero{
+  position:relative;height:200px;overflow:hidden;background:var(--parchment);flex-shrink:0;
+}
+.section-hero img{width:100%;height:100%;object-fit:cover;filter:brightness(0.85) saturate(1.05);}
+.section-hero-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top, rgba(74,15,28,0.85) 0%, rgba(74,15,28,0.25) 60%, transparent 100%);
+}
+.section-hero-content{
+  position:absolute;bottom:0;left:0;right:0;padding:18px 22px;
+}
+.section-hero-content h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:36px;font-weight:500;color:#fff7e8;margin-bottom:4px;
+}
+.section-hero-content p{
+  font-size:11px;letter-spacing:3px;color:var(--gold-light);
+  text-transform:uppercase;font-family:'Tenor Sans',sans-serif;
+}
+.section-tagline{
+  padding:16px 22px 20px;
+  font-size:13px;color:var(--ink-soft);line-height:1.7;
+  border-bottom:0.5px solid var(--border);
+}
+
+.place-card{
+  margin:14px 16px;
+  border:0.5px solid var(--border);border-radius:3px;overflow:hidden;
+  transition:border-color 0.25s;
+  background:var(--cream-soft);
+  box-shadow:var(--shadow);
+}
+.place-card:hover{border-color:var(--border-strong);}
+.place-card-img{
+  width:100%;height:155px;object-fit:cover;display:block;
+  filter:brightness(0.92) saturate(1.05);
+}
+.place-card-placeholder{
+  width:100%;height:155px;background:var(--parchment);
+  display:flex;align-items:center;justify-content:center;font-size:40px;
+}
+.place-card-body{
+  background:var(--cream-soft);padding:14px 16px;
+}
+.place-card-name{
+  font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:500;
+  color:var(--maroon-deep);margin-bottom:5px;
+}
+.place-card-desc{font-size:13px;color:var(--ink-soft);line-height:1.65;}
+.place-card-rating{
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:11px;color:var(--gold-deep);margin-top:8px;
+}
+
+.grooming-card{
+  margin:12px 16px;
+  border:0.5px solid var(--border);border-radius:3px;
+  background:var(--cream-soft);padding:18px;
+  display:flex;gap:16px;align-items:flex-start;
+  box-shadow:var(--shadow);
+}
+.grooming-icon{font-size:26px;flex-shrink:0;margin-top:2px;}
+.grooming-name{
+  font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:500;
+  color:var(--maroon-deep);margin-bottom:4px;
+}
+.grooming-desc{font-size:13px;color:var(--ink-soft);line-height:1.6;}
+.grooming-tag{
+  display:inline-block;margin-top:8px;
+  font-size:10px;letter-spacing:1.5px;padding:4px 10px;
+  border:0.5px solid var(--border);border-radius:1px;
+  color:var(--gold-deep);font-family:'Tenor Sans',sans-serif;
+  text-transform:uppercase;
+  background:var(--cream-warm);
+}
+
+.transport-card{
+  margin:12px 16px;
+  border:0.5px solid var(--border);border-radius:3px;
+  background:var(--cream-soft);padding:18px 20px;
+  box-shadow:var(--shadow);
+}
+.transport-icon{font-size:26px;margin-bottom:10px;}
+.transport-name{
+  font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:500;
+  color:var(--maroon-deep);margin-bottom:6px;
+}
+.transport-desc{font-size:13px;color:var(--ink-soft);line-height:1.65;}
+
+.ornament-top{
+  width:100%;text-align:center;padding:20px 0 4px;
+  color:var(--border);font-size:22px;letter-spacing:6px;
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════ COVER ═══════════════ -->
+<div id="cover" class="screen active">
+  <div class="cover-hero">
+    <img src="assets/welcome-lunch.jpg" alt="Wedding celebration">
+    <div class="cover-hero-overlay"></div>
+    <div class="cover-hero-pattern"></div>
+    <div class="cover-floater">
+      <p class="cover-tag">You are cordially invited</p>
+      <div class="cover-names serif">
+        Hitesh<span class="cover-amp">&amp;</span><em>Manisha</em>
+      </div>
+    </div>
+  </div>
+  <div class="cover-body">
+    <div class="cover-date-row">
+      <div class="cover-date-line"></div>
+      <span class="cover-date">14 – 16 November 2026</span>
+      <div class="cover-date-line"></div>
+    </div>
+    <p class="cover-location">Landmark Towers, Kanpur</p>
+    <div class="paisley-divider">
+      <div class="paisley-line"></div>
+      <span class="paisley-center">✦</span>
+      <div class="paisley-line right"></div>
+    </div>
+    <div class="nav-grid">
+      <button class="nav-btn" onclick="showEvents()">
+        <span class="nav-btn-icon">🪔</span>
+        <span class="nav-btn-label">Events</span>
+      </button>
+      <button class="nav-btn" onclick="openRSVP()">
+        <span class="nav-btn-icon">✉️</span>
+        <span class="nav-btn-label">RSVP</span>
+      </button>
+      <button class="nav-btn" onclick="showScreen('city')">
+        <span class="nav-btn-icon">🏙️</span>
+        <span class="nav-btn-label">Explore City</span>
+      </button>
+      <button class="nav-btn" onclick="showScreen('transport')">
+        <span class="nav-btn-icon">✈️</span>
+        <span class="nav-btn-label">Getting Here</span>
+      </button>
+      <button class="nav-btn" onclick="showScreen('grooming')">
+        <span class="nav-btn-icon">💈</span>
+        <span class="nav-btn-label">Grooming</span>
+      </button>
+      <button class="nav-btn" onclick="showScreen('venue')">
+        <span class="nav-btn-icon">🏨</span>
+        <span class="nav-btn-label">The Venue</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ EVENTS LIST ═══════════════ -->
+<div id="events" class="screen">
+  <div class="topbar">
+    <button class="back-btn" onclick="showScreen('cover')">← Home</button>
+    <span class="topbar-title">Events</span>
+  </div>
+  <div class="scroll-area" id="events-content"></div>
+</div>
+
+<!-- ═══════════════ EVENT DETAIL ═══════════════ -->
+<div id="event-detail" class="screen">
+  <div class="topbar">
+    <button class="back-btn" onclick="showScreen('events')">← Events</button>
+    <span class="topbar-title" id="detail-topbar-title"></span>
+  </div>
+  <div class="scroll-area" id="event-detail-content"></div>
+</div>
+
+<!-- ═══════════════ RSVP FORM ═══════════════ -->
+<div id="rsvp-form" class="screen">
+  <div class="topbar">
+    <button class="back-btn" onclick="showScreen('cover')">← Home</button>
+    <span class="topbar-title">RSVP</span>
+  </div>
+  <div class="scroll-area">
+    <div class="rsvp-form-wrap">
+      <p class="rsvp-event-tag">Hitesh &amp; Manisha</p>
+      <p class="rsvp-event-title">Kindly respond</p>
+      <p class="rsvp-intro">One RSVP for the entire celebration — kindly let us know who's joining, how many attendees, and any dietary needs so we can welcome you the way you deserve.</p>
+
+      <div class="form-error" id="rsvp-error"></div>
+
+      <label class="form-label">Your full name</label>
+      <input class="form-input" type="text" id="rsvp-name" placeholder="e.g. Rahul Sharma">
+
+      <label class="form-label">Email address</label>
+      <input class="form-input" type="email" id="rsvp-email" placeholder="rahul@example.com" required>
+
+      <label class="form-label">Number of attendees (including yourself)</label>
+      <div class="guest-counter">
+        <button class="count-btn" onclick="changeCount(-1)">−</button>
+        <span class="count-display" id="guest-count">1</span>
+        <button class="count-btn" onclick="changeCount(1)">+</button>
+      </div>
+
+      <label class="form-label">Dietary restrictions</label>
+      <input class="form-input" type="text" id="rsvp-diet" placeholder="e.g. Vegetarian, Jain, Nut allergy, none">
+
+      <label class="form-label">Message to the couple (optional)</label>
+      <textarea class="form-input" id="rsvp-msg" placeholder="Share your wishes or any note…"></textarea>
+
+      <button class="submit-btn" id="rsvp-submit" onclick="submitRSVP()">Confirm Attendance</button>
+
+      <div id="rsvp-success" style="display:none;" class="success-card">
+        <div class="s-emoji">🙏</div>
+        <p class="s-title">Dhanyavaad!</p>
+        <p class="s-msg" id="rsvp-success-msg"></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ CITY ═══════════════ -->
+<div id="city" class="screen">
+  <div class="topbar">
+    <button class="back-btn" onclick="showScreen('cover')">← Home</button>
+    <span class="topbar-title">Explore Kanpur</span>
+  </div>
+  <div class="scroll-area">
+    <div class="section-hero">
+      <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800&q=80" alt="Kanpur">
+      <div class="section-hero-overlay"></div>
+      <div class="section-hero-content">
+        <h1>Kanpur</h1>
+        <p>The City of Nawabs &amp; Leather</p>
+      </div>
+    </div>
+    <p class="section-tagline">While you're here for the festivities, take a moment to explore the vibrant heritage and hidden gems of Kanpur.</p>
+
+    <div class="place-card">
+      <img class="place-card-img" src="https://images.unsplash.com/photo-1548013146-72479768bada?w=600&q=80" alt="Allen Forest Zoo">
+      <div class="place-card-body">
+        <p class="place-card-name">Allen Forest Zoo</p>
+        <p class="place-card-desc">One of the few zoos in India established within a natural forest, featuring a large lake and diverse wildlife including lions, tigers, and exotic birds.</p>
+        <div class="place-card-rating">⭐ 4.2 · Open Tue–Sun, 9am–5pm</div>
+      </div>
+    </div>
+
+    <div class="place-card">
+      <img class="place-card-img" src="https://images.unsplash.com/photo-1545158535-c3f7168c28b6?w=600&q=80" alt="JK Temple">
+      <div class="place-card-body">
+        <p class="place-card-name">JK Temple</p>
+        <p class="place-card-desc">A stunning white marble temple dedicated to Lord Radha Krishna, celebrated for its harmonious blend of Nagara-style ancient architecture with modern design sensibility.</p>
+        <div class="place-card-rating">⭐ 4.6 · Open 5–12am & 4–10pm daily</div>
+      </div>
+    </div>
+
+    <div class="place-card">
+      <img class="place-card-img" src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80" alt="Moti Jheel">
+      <div class="place-card-body">
+        <p class="place-card-name">Moti Jheel</p>
+        <p class="place-card-desc">A scenic lake and parkland originally built as a drinking water reservoir — now beloved for peaceful boating, evening strolls, and lush green surroundings.</p>
+        <div class="place-card-rating">⭐ 4.2 · Open daily, ₹10 entry</div>
+      </div>
+    </div>
+
+    <div class="place-card">
+      <img class="place-card-img" src="assets/church.jpg" alt="Kanpur Memorial Church">
+      <div class="place-card-body">
+        <p class="place-card-name">Kanpur Memorial Church</p>
+        <p class="place-card-desc">An impressive Lombardic Gothic cathedral built in 1875, commemorating those who fell during the 1857 uprising. Serene, majestic, and beautifully preserved.</p>
+        <div class="place-card-rating">⭐ 4.4 · Visit Sun 9–11am · Carry ID</div>
+      </div>
+    </div>
+
+    <div class="place-card">
+      <img class="place-card-img" src="https://images.unsplash.com/photo-1533130061792-64b345e4a833?w=600&q=80" alt="Bithoor">
+      <div class="place-card-body">
+        <p class="place-card-name">Bithoor</p>
+        <p class="place-card-desc">A mythological town on the sacred banks of the Ganges — believed to be the birthplace of sage Valmiki and a key site in Indian mythology. A deeply spiritual half-day trip.</p>
+        <div class="place-card-rating">📍 ~20km from Kanpur city centre</div>
+      </div>
+    </div>
+    <div style="height:40px;"></div>
+  </div>
+</div>
+
+<!-- ═══════════════ TRANSPORT ═══════════════ -->
+<div id="transport" class="screen">
+  <div class="topbar">
+    <button class="back-btn" onclick="showScreen('cover')">← Home</button>
+    <span class="topbar-title">Getting Here</span>
+  </div>
+  <div class="scroll-area">
+    <div class="section-hero">
+      <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&q=80" alt="Travel">
+      <div class="section-hero-overlay"></div>
+      <div class="section-hero-content">
+        <h1>Getting to Kanpur</h1>
+        <p>Travel guide for guests</p>
+      </div>
+    </div>
+    <p class="section-tagline">We want your journey to be as comfortable as the celebration itself. Here's everything you need to know.</p>
+
+    <div class="transport-card">
+      <div class="transport-icon">✈️</div>
+      <p class="transport-name">By Air</p>
+      <p class="transport-desc">Fly into Kanpur Airport (KNU) or Lucknow Chaudhary Charan Singh International Airport (LKO), which is approximately 90 minutes away. Pre-paid taxis and app cabs are readily available from both airports.</p>
+    </div>
+    <div class="transport-card">
+      <div class="transport-icon">🚂</div>
+      <p class="transport-name">By Train</p>
+      <p class="transport-desc">Kanpur Central Station (CNB) is one of the busiest rail junctions in India, with excellent connectivity from Delhi (Shatabdi/Rajdhani), Mumbai, and Kolkata. The hotel is approximately 20 minutes by taxi from the station.</p>
+    </div>
+    <div class="transport-card">
+      <div class="transport-icon">🚗</div>
+      <p class="transport-name">By Road</p>
+      <p class="transport-desc">Kanpur is well-connected via the Agra–Lucknow Expressway. Approximately 4.5 hours from Delhi, 1.5 hours from Lucknow, and 2 hours from Agra. Ample parking is available at Landmark Towers.</p>
+    </div>
+    <div class="transport-card">
+      <div class="transport-icon">🏨</div>
+      <p class="transport-name">Venue & Accommodation</p>
+      <p class="transport-desc">All events are hosted at Landmark Towers, 10 The Mall, Civil Lines, Kanpur. Rooms are available at the hotel — contact us to receive the group booking details and special rates.</p>
+    </div>
+    <div class="transport-card">
+      <div class="transport-icon">🚐</div>
+      <p class="transport-name">Shuttle Service</p>
+      <p class="transport-desc">Complimentary shuttles will run between select pick-up points and the venue on all three days. A detailed schedule with timings will be shared with guests prior to the events.</p>
+    </div>
+    <div style="height:40px;"></div>
+  </div>
+</div>
+
+<!-- ═══════════════ GROOMING ═══════════════ -->
+<div id="grooming" class="screen">
+  <div class="topbar">
+    <button class="back-btn" onclick="showScreen('cover')">← Home</button>
+    <span class="topbar-title">Grooming</span>
+  </div>
+  <div class="scroll-area">
+    <div class="section-hero">
+      <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&q=80" alt="Grooming">
+      <div class="section-hero-overlay"></div>
+      <div class="section-hero-content">
+        <h1>Look Your Best</h1>
+        <p>Curated grooming services</p>
+      </div>
+    </div>
+    <p class="section-tagline">We've arranged top-tier stylists and beauty services so every guest looks and feels radiant across all three days of celebration.</p>
+
+    <div class="grooming-card">
+      <div class="grooming-icon">💄</div>
+      <div>
+        <p class="grooming-name">Bridal & Bridesmaid Makeup</p>
+        <p class="grooming-desc">Full glam, airbrush, and traditional looks by our curated artist team. Sessions available on all three event mornings — bridal trials available on Day 1 morning.</p>
+        <span class="grooming-tag">Book via WhatsApp</span>
+      </div>
+    </div>
+    <div class="grooming-card">
+      <div class="grooming-icon">💇</div>
+      <div>
+        <p class="grooming-name">Hair Styling</p>
+        <p class="grooming-desc">Blowouts, braids, updos and traditional styles adorned with fresh flowers. Sessions begin at 6:00 AM on event mornings. Priority for family members.</p>
+        <span class="grooming-tag">Complimentary for family</span>
+      </div>
+    </div>
+    <div class="grooming-card">
+      <div class="grooming-icon">🪒</div>
+      <div>
+        <p class="grooming-name">Groom & Groomsmen Grooming</p>
+        <p class="grooming-desc">Classic shave, skin prep, and hair styling. The groom's barber session is on Day 2 from 7–9 AM exclusively. Groomsmen slots run alongside.</p>
+        <span class="grooming-tag">By appointment only</span>
+      </div>
+    </div>
+    <div class="grooming-card">
+      <div class="grooming-icon">🌸</div>
+      <div>
+        <p class="grooming-name">Mehendi (Henna)</p>
+        <p class="grooming-desc">Expert mehendi artists available during Sangeet evening on Day 1. The bridal mehendi session is a private affair on Day 1 afternoon before the event.</p>
+        <span class="grooming-tag">Sign-up sheet at venue</span>
+      </div>
+    </div>
+    <div class="grooming-card">
+      <div class="grooming-icon">🧵</div>
+      <div>
+        <p class="grooming-name">Outfit Assistance & Draping</p>
+        <p class="grooming-desc">Need help pinning a saree or tying a turban? Our on-site dresser is available each morning to assist guests in achieving the perfect traditional look.</p>
+        <span class="grooming-tag">Available 7–10 AM daily</span>
+      </div>
+    </div>
+    <div class="grooming-card">
+      <div class="grooming-icon">🧘</div>
+      <div>
+        <p class="grooming-name">Hotel Spa & Wellness</p>
+        <p class="grooming-desc">Unwind between events with Ayurvedic treatments, Swedish massage, and facials at the hotel spa. We recommend booking 48 hours in advance to secure your slot.</p>
+        <span class="grooming-tag">Hotel spa — ext. 42</span>
+      </div>
+    </div>
+    <div style="height:40px;"></div>
+  </div>
+</div>
+
+<!-- ═══════════════ VENUE ═══════════════ -->
+<div id="venue" class="screen">
+  <div class="topbar">
+    <button class="back-btn" onclick="showScreen('cover')">← Home</button>
+    <span class="topbar-title">The Venue</span>
+  </div>
+  <div class="scroll-area">
+    <div class="section-hero">
+      <img src="https://images.unsplash.com/photo-1563911302283-d2bc129e7570?w=800&q=80" alt="Venue">
+      <div class="section-hero-overlay"></div>
+      <div class="section-hero-content">
+        <h1>Landmark Towers</h1>
+        <p>10 The Mall, Civil Lines, Kanpur</p>
+      </div>
+    </div>
+    <p class="section-tagline">All events across the three days are hosted at the iconic Landmark Towers — Kanpur's most prestigious address, right in the heart of Civil Lines.</p>
+
+    <div class="transport-card">
+      <div class="transport-icon">🍽️</div>
+      <p class="transport-name">The Waterside — 10th Floor</p>
+      <p class="transport-desc">Welcome Lunch (Day 1) · Breakfast (Day 2 & Day 3). A refined all-day dining restaurant with panoramic views.</p>
+    </div>
+    <div class="transport-card">
+      <div class="transport-icon">🎶</div>
+      <p class="transport-name">LIV — 10th Floor</p>
+      <p class="transport-desc">Sangeet & Ring Ceremony (Day 1). A vibrant events venue known for its spectacular setting and atmosphere.</p>
+    </div>
+    <div class="transport-card">
+      <div class="transport-icon">🥘</div>
+      <p class="transport-name">The Asian Kitchen — 10th Floor</p>
+      <p class="transport-desc">Saatsod (Day 2) · Lunch (Day 2). An intimate dining space offering rich flavours and elegant surroundings.</p>
+    </div>
+    <div class="transport-card">
+      <div class="transport-icon">🏛️</div>
+      <p class="transport-name">10th Floor Lobby</p>
+      <p class="transport-desc">Sehrabandi Ceremony (Day 2) — the groom's turban and veil adorning ritual held in the grand lobby before the procession.</p>
+    </div>
+    <div class="transport-card">
+      <div class="transport-icon">🍵</div>
+      <p class="transport-name">YU — 16th Floor</p>
+      <p class="transport-desc">Pheras & Hi Tea (Day 2). An elevated experience with city views for the sacred ceremony and post-ceremony tea.</p>
+    </div>
+    <div class="transport-card">
+      <div class="transport-icon">🥂</div>
+      <p class="transport-name">Platenia — 10th Floor</p>
+      <p class="transport-desc">Reception Dinner (Day 2). An elegant banquet space for the grand finale — dinner, music, and dancing.</p>
+    </div>
+    <div style="height:40px;"></div>
+  </div>
+</div>
+
+<script>
+const events = [
+  {
+    id:0, day:1, dayLabel:"Day 1", dayFull:"Saturday, 14 November 2026",
+    name:"Welcome Lunch", emoji:"🍽️",
+    time:"1:00 PM onwards",
+    venue:"The Waterside", location:"10th Floor, Landmark Towers, Kanpur",
+    dresscode:"Smart Casual — Pastels & Whites",
+    desc:"Begin the celebrations with a warm and relaxed welcome lunch. Guests arriving into Kanpur will be greeted with fine regional cuisine, refreshing drinks, and the warmth of family and friends as the festivities begin.",
+    img:"assets/welcome-lunch.jpg"
+  },
+  {
+    id:1, day:1, dayLabel:"Day 1", dayFull:"Saturday, 14 November 2026",
+    name:"Sangeet & Ring Ceremony", emoji:"💍",
+    time:"8:30 PM onwards",
+    venue:"LIV", location:"10th Floor, Landmark Towers, Kanpur",
+    dresscode:"Festive Indian — Lehenga / Sherwani",
+    desc:"An electrifying evening of music, choreographed performances, and the official ring exchange ceremony. Expect dramatic lighting, live dhol, family dance acts, and a lavish dinner under a night sky filled with sparkle and celebration.",
+    img:"https://images.unsplash.com/photo-1519741497674-611481863552?w=900&q=80"
+  },
+  {
+    id:2, day:2, dayLabel:"Day 2", dayFull:"Sunday, 15 November 2026",
+    name:"Breakfast", emoji:"🌅",
+    time:"8:00 AM – 10:00 AM",
+    venue:"The Waterside", location:"10th Floor, Landmark Towers, Kanpur",
+    dresscode:"Casual Comfortable",
+    desc:"Start the most significant day with a serene open-air breakfast overlooking Kanpur's skyline. A spread of Indian and continental options sets the perfect tone before a day full of sacred rituals and grandeur.",
+    img:"https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?w=900&q=80"
+  },
+  {
+    id:3, day:2, dayLabel:"Day 2", dayFull:"Sunday, 15 November 2026",
+    name:"Saatsod", emoji:"🪔",
+    time:"11:00 AM – 12:30 PM",
+    venue:"The Asian Kitchen", location:"10th Floor, Landmark Towers, Kanpur",
+    dresscode:"Traditional Indian — Yellow & Marigold",
+    desc:"A sacred pre-wedding ritual where the groom is blessed by family elders with turmeric paste, sandalwood, and heartfelt prayers. Women of the family lead the ceremony with folk songs, laughter, and joy. A beautiful and intimate tradition.",
+    img:"assets/saatsod.png"
+  },
+  {
+    id:4, day:2, dayLabel:"Day 2", dayFull:"Sunday, 15 November 2026",
+    name:"Lunch", emoji:"🍛",
+    time:"12:30 PM – 2:30 PM",
+    venue:"The Asian Kitchen", location:"10th Floor, Landmark Towers, Kanpur",
+    dresscode:"Traditional Indian",
+    desc:"A sumptuous mid-day feast following the Saatsod ritual. Enjoy rich North Indian and Asian flavours in an intimate setting as guests gather their energy for the grand afternoon ahead.",
+    img:"https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=900&q=80"
+  },
+  {
+    id:5, day:2, dayLabel:"Day 2", dayFull:"Sunday, 15 November 2026",
+    name:"Sehrabandi", emoji:"👑",
+    time:"2:00 PM – 2:30 PM",
+    venue:"10th Floor Lobby", location:"Landmark Towers, Kanpur",
+    dresscode:"Traditional Indian — Sherwanis & Sarees",
+    desc:"The Sehrabandi marks the groom's transformation into a maharaja. The groom's turban is tied and his sehra — a veil of marigolds and pearls — is carefully adorned by family elders in a brief yet deeply moving ceremony before the procession.",
+    img:"assets/sehrabandi.jpg"
+  },
+  {
+    id:6, day:2, dayLabel:"Day 2", dayFull:"Sunday, 15 November 2026",
+    name:"Baraat", emoji:"🐴",
+    time:"3:00 PM onwards",
+    venue:"Behind Landmark Hotel", location:"Landmark Towers, Kanpur",
+    dresscode:"Festive Traditional — Red & Gold",
+    desc:"The grand groom's procession through the streets! The groom arrives on a decorated mare to the thundering beat of the dhol and brass band. Family and guests dance with abandon — this is the moment to let loose and celebrate with complete abandon.",
+    img:"https://images.unsplash.com/photo-1570007743988-6f8f98b91eff?w=900&q=80"
+  },
+  {
+    id:7, day:2, dayLabel:"Day 2", dayFull:"Sunday, 15 November 2026",
+    name:"Pheras & Hi Tea", emoji:"🔥",
+    time:"5:00 PM – 6:00 PM",
+    venue:"YU", location:"16th Floor, Landmark Towers, Kanpur",
+    dresscode:"Formal Indian — Saree / Sherwani",
+    desc:"The sacred Pheras — seven vows taken together around the holy fire — are witnessed by family under an open sky on Kanpur's most elevated venue. The ceremony is followed by a refined Hi Tea with sweeping city views as the sun sets over the horizon.",
+    img:"https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=900&q=80"
+  },
+  {
+    id:8, day:2, dayLabel:"Day 2", dayFull:"Sunday, 15 November 2026",
+    name:"Reception Dinner", emoji:"🥂",
+    time:"8:30 PM onwards",
+    venue:"Platenia", location:"10th Floor, Landmark Towers, Kanpur",
+    dresscode:"Black Tie / Formal Indian",
+    desc:"The grand reception — the jewel in the crown of the celebration. A gourmet dinner, live music, and dancing await as the newly married couple makes their first entrance together. A night of glamour, warmth, and unforgettable memories.",
+    img:"https://images.unsplash.com/photo-1511578314322-379afb476865?w=900&q=80"
+  },
+  {
+    id:9, day:3, dayLabel:"Day 3", dayFull:"Monday, 16 November 2026",
+    name:"Farewell Breakfast", emoji:"☀️",
+    time:"8:00 AM – 10:00 AM",
+    venue:"The Waterside", location:"10th Floor, Landmark Towers, Kanpur",
+    dresscode:"Casual",
+    desc:"A gentle, heartfelt farewell over a leisurely breakfast. Relive the weekend's precious memories with the newlyweds and fellow guests before departing with a heart full of joy, love, and the warmth of an unforgettable Indian wedding.",
+    img:"https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?w=900&q=80"
+  }
+];
+
+const dayGroups = [
+  {label:"Day 1", date:"Saturday, 14 November 2026", ids:[0,1]},
+  {label:"Day 2", date:"Sunday, 15 November 2026", ids:[2,3,4,5,6,7,8]},
+  {label:"Day 3", date:"Monday, 16 November 2026", ids:[9]}
+];
+
+let guestCount = 1;
+let currentEventId = null;
+
+function showScreen(id){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0,0);
+  const el = document.getElementById(id);
+  if(el) el.scrollTop = 0;
+}
+
+function showEvents(){
+  let html = '';
+  dayGroups.forEach(dg=>{
+    const dateParts = dg.date.split(',');
+    const weekday = dateParts[0];
+    const datePart = dateParts.slice(1).join(',').trim();
+    html += `<div class="day-separator">
+      <div class="day-sep-line"></div>
+      <div class="day-sep-content">
+        <p class="day-sep-num">${dg.label}</p>
+        <p class="day-sep-date">${datePart}</p>
+        <p class="day-sep-weekday">${weekday}</p>
+      </div>
+      <div class="day-sep-line"></div>
+    </div>`;
+    dg.ids.forEach(id=>{
+      const e = events[id];
+      html += `<div class="event-card" onclick="showEventDetail(${id})">
+        <div class="event-img-wrap">
+          <img src="${e.img}" alt="${e.name}" onerror="this.style.display='none'">
+          <div class="event-img-gradient"></div>
+          <span class="event-time-badge">${e.time.split('–')[0].trim()}</span>
+          <div class="event-title-overlay">
+            <span class="event-emoji">${e.emoji}</span>
+            <p class="event-name">${e.name}</p>
+            <p class="event-day-label">${e.dayLabel} · ${e.venue}</p>
+          </div>
+        </div>
+        <div class="event-footer">
+          <span class="event-location-short">📍 ${e.venue}, ${e.location.split(',')[0]}</span>
+          <span class="event-arrow">→</span>
+        </div>
+      </div>`;
+    });
+  });
+  html += '<div style="height:40px;"></div>';
+  document.getElementById('events-content').innerHTML = html;
+  showScreen('events');
+}
+
+function showEventDetail(id){
+  currentEventId = id;
+  const e = events[id];
+  document.getElementById('detail-topbar-title').textContent = e.name;
+  document.getElementById('event-detail-content').innerHTML = `
+    <div class="detail-hero-wrap">
+      <img src="${e.img}" alt="${e.name}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="detail-hero-placeholder" style="display:none;">${e.emoji}</div>
+      <div class="detail-hero-overlay"></div>
+      <div class="detail-hero-content">
+        <p class="detail-day-tag">${e.dayLabel} · ${e.dayFull}</p>
+        <p class="detail-title">${e.name}</p>
+      </div>
+    </div>
+    <div class="detail-body">
+      <div class="detail-info-grid">
+        <div class="detail-info-box">
+          <p class="detail-info-label">Time</p>
+          <p class="detail-info-val">${e.time}</p>
+        </div>
+        <div class="detail-info-box">
+          <p class="detail-info-label">Venue</p>
+          <p class="detail-info-val">${e.venue}</p>
+        </div>
+        <div class="detail-info-box" style="grid-column:1/-1;">
+          <p class="detail-info-label">Location</p>
+          <p class="detail-info-val">${e.location}</p>
+        </div>
+      </div>
+      <p class="detail-section-label">Dress code</p>
+      <div class="dress-pill" style="margin-bottom:22px;">👗 ${e.dresscode}</div>
+      <div class="divider"></div>
+      <p class="detail-desc">${e.desc}</p>
+    </div>`;
+  showScreen('event-detail');
+}
+
+function openRSVP(){
+  guestCount = 1;
+  document.getElementById('guest-count').textContent = 1;
+  document.getElementById('rsvp-success').style.display = 'none';
+  document.getElementById('rsvp-error').style.display = 'none';
+  ['rsvp-name','rsvp-email','rsvp-diet','rsvp-msg'].forEach(f=>{
+    document.getElementById(f).value='';
+  });
+  showScreen('rsvp-form');
+}
+
+function changeCount(d){
+  guestCount = Math.max(1, Math.min(20, guestCount+d));
+  document.getElementById('guest-count').textContent = guestCount;
+}
+
+function showError(msg){
+  const el = document.getElementById('rsvp-error');
+  el.textContent = msg;
+  el.style.display = 'block';
+}
+
+async function submitRSVP(){
+  const name    = document.getElementById('rsvp-name').value.trim();
+  const email   = document.getElementById('rsvp-email').value.trim();
+  const dietary = document.getElementById('rsvp-diet').value.trim();
+  const message = document.getElementById('rsvp-msg').value.trim();
+
+  document.getElementById('rsvp-error').style.display = 'none';
+
+  if(!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+    showError('Please enter a valid email address.');
+    return;
+  }
+
+  const btn = document.getElementById('rsvp-submit');
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+
+  try {
+    const res = await fetch('/api/rsvp', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({name, email, attendees: guestCount, dietary, message})
+    });
+    if(!res.ok){
+      const data = await res.json().catch(()=>({}));
+      throw new Error(data.error || 'Could not record your RSVP. Please try again.');
+    }
+    document.getElementById('rsvp-success').style.display = 'block';
+    document.getElementById('rsvp-success-msg').textContent =
+      `${name || 'Dear guest'}, we've noted ${guestCount} attendee${guestCount>1?'s':''} for the celebration. We are overjoyed to have you with us.`;
+  } catch(err){
+    showError(err.message || 'Something went wrong. Please try again.');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Confirm Attendance';
+  }
+}
+</script>
+</body>
+</html>
